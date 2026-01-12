@@ -65,17 +65,6 @@
 
 ---
 
-## 📁 Project Structure
-portofilio/
-├─ css/         styles
-├─ js/          scripts
-├─ images/      assets
-├─ index.html   main page
-├─ CNAME        domain config
-└─ README.md    documentation
-
----
-
 ## ▶️ Run locally
 
 ```bash
