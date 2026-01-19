@@ -13,7 +13,7 @@ var typed = new Typed('#typed', {
     strings: [
         'I like to code.',
         'I like to watch Anime.',
-        'I like to read Manga.',
+        'I like reading Manga.',
         'I like to play E-Games.',
         'I like to learn New Things.',
         'I like you too 💖.',
