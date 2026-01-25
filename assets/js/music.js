@@ -2,6 +2,7 @@ const songs = [
     "blue - yung kai.mp3",
     "Van Gogh (feat. Ashley Alisha).mp3",
     "Winter blossom (feat. Ashley Alisha & nobody likes you pat).mp3"
+    "shining.mp3"
 ];
 
 let currentSongIndex = 0;
