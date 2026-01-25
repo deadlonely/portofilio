@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Verification</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- Local-only verification (no external Turnstile) -->
   
   <style>
     :root{--bg1:#0f1724;--bg2:#0b2545;--card:#0f172a;--muted:#9aa4b2;--accent:#6ee7b7}
@@ -37,10 +37,9 @@
       </div>
 
         <div class="turnstile-row">
-          <!-- Cloudflare Turnstile widget -->
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAACQGSPPwHssZVEkq" data-callback="onTurnstileSuccess"></div>
+          <button id="local-verify-btn" class="verify-btn">Verify & Continue</button>
         </div>
-        <p id="captcha-msg">Waiting for verification...</p>
+        <p id="captcha-msg">Click Verify to continue (local-only).</p>
       <p class="small-note">This verification prevents automated access. Your privacy is respected.</p>
     </div>
   </div>
