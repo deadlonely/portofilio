@@ -13,7 +13,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <link rel="stylesheet" href="./assets/css/tilt-effect.css">
+  <!-- Cloudflare Turnstile (replace data-sitekey with your site key) -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
+
+<script>
+  (function(){
+    try {
+      if (!localStorage.getItem('captcha_passed')) {
+        var p = window.location.pathname;
+        if (!p.endsWith('/captcha.html') && !p.endsWith('captcha.html')) {
+          window.location.href = 'captcha.html';
+        }
+      }
+    } catch(e){console.error('captcha gate error', e);} 
+  })();
+</script>
 
   <div id="terminal">
     <div id="terminal-header">
@@ -120,11 +135,25 @@
           <i class="fa-brands fa-google mail"></i>
         </a>
       </div>
+
+      <!-- Contact form with Cloudflare Turnstile -->
+      <div class="contact-container">
+        <form id="contact-form">
+          <h3>Contact me</h3>
+          <input type="text" id="cf-name" name="name" placeholder="Your name" required />
+          <input type="email" id="cf-email" name="email" placeholder="Your email" required />
+          <textarea id="cf-message" name="message" placeholder="Message" required></textarea>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAACQGSPPwHssZVEkq"></div>
+          <button type="submit">Send</button>
+          <div id="cf-status" style="margin-top:8px;color:#fff"></div>
+        </form>
+      </div>
     </div>
   </div>
   
   <script src="./assets/js/lanyard.js"></script>
   <script src="./assets/js/discord.js"></script>
+  <script src="./assets/js/captcha.js"></script>
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/title.js"></script>
   <script src="./assets/js/username-animation.js"></script>
